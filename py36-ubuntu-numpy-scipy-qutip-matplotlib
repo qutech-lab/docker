@@ -1,0 +1,5 @@
+FROM ubuntu:18.04
+
+RUN apt update && apt --no-install-recommends install -y python3.6 python3-cython python3-numpy python3-setuptools python3-scipy python3-matplotlib python3-pytest python3-coverage python3-flake8 python3-pip python3-sphinx
+
+RUN pip3 install qutip flake8-colors flake8-docstrings flake8-import-order sphinx_autodoc_typehints
