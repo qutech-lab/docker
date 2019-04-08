@@ -1,4 +1,4 @@
 FROM continuumio/miniconda3
 
-RUN conda config --append channels conda-forge && conda update conda -y --quiet && conda install python=3.7 matplotlib qutip pytest coverage flake8 sphinx nbsphinx sphinx_rtd_theme numpydoc jupyter ipython -y --quiet && pip install --upgrade --quiet pip
+RUN conda config --append channels conda-forge && conda update conda -y --quiet && conda install python=3.7 matplotlib qutip=4.3.0 pytest coverage flake8 sphinx nbsphinx sphinx_rtd_theme numpydoc jupyter ipython -y --quiet && pip install --upgrade --quiet pip
 RUN pip install flake8-colors flake8-docstrings flake8-import-order sphinx_autodoc_typehints
