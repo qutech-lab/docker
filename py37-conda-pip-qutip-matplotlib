@@ -1,7 +1,7 @@
 FROM continuumio/miniconda3
 
 RUN apt update && apt install -y gcc g++
-RUN conda config --append channels conda-forge && conda update conda -y --quiet && conda create --name py37 python=3.7 cython numpy scipy nose matplotlib pytest coverage flake8 sphinx nbsphinx sphinx_rtd_theme numpydoc jupyter ipython -y --quiet
+RUN conda config --append channels conda-forge && conda update conda -y --quiet && conda create --name py37 python=3.7 cython numpy scipy nose matplotlib pytest coverage flake8 sphinx nbsphinx sphinx_rtd_theme numpydoc jupyter ipython "pandoc>=1.12.1,<2.0.0" -y --quiet
 RUN echo "source activate py37" > ~/.bashrc
 ENV PATH /opt/conda/envs/py37/bin:$PATH
 RUN pip install --upgrade --quiet pip && pip install qutip flake8-colors flake8-docstrings flake8-import-order sphinx_autodoc_typehints
